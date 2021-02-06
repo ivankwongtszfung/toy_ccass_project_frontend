@@ -39,6 +39,7 @@ function App() {
 
   const handleChange = (event, newValue) => {
     methods.reset();
+    setParam(null);
     setValue(newValue);
   };
   const onSubmit = (data) => {
