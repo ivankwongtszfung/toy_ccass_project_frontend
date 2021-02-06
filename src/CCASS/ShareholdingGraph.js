@@ -109,8 +109,8 @@ export default function ShareholdingGraph(props) {
             />
             <CustomMaterialTable
               columns={[
-                { title: "Date", field: "date", type: "datetime" },
-                { title: "Rank", field: "ranking"},
+                { title: "Date", field: "date", type: "date" },
+                { title: "Rank", field: "ranking" },
                 { title: "Participate Id", field: "participant-id" },
                 { title: "Participate Name", field: "participant-name" },
                 {
@@ -128,6 +128,8 @@ export default function ShareholdingGraph(props) {
               title="top 10 participate"
               options={{
                 filtering: true,
+                pageSize: 10,
+                pageSizeOptions: [10, 20, 50],
               }}
             />
           </>

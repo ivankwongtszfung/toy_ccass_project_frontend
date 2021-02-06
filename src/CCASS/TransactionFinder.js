@@ -60,7 +60,7 @@ export default function TransactionFinder(props) {
         {transaction.length > 0 && (
           <CustomMaterialTable
             columns={[
-              { title: "Date", field: "date", type: "datetime" },
+              { title: "Date", field: "date", type: "date" },
               { title: "Participate Id", field: "participateId" },
               {
                 title: "Changes in %",
@@ -70,6 +70,11 @@ export default function TransactionFinder(props) {
             ]}
             data={transaction}
             title="Transaction Finder"
+            options={{
+              filtering: true,
+              pageSize: 10,
+              pageSizeOptions: [10, 20, 50],
+            }}
           />
         )}
       </div>
