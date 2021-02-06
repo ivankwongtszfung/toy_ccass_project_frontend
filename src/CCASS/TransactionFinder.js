@@ -15,7 +15,7 @@ export default function TransactionFinder(props) {
 
   React.useEffect(() => {
     console.log(params);
-    const url = new URL("http://127.0.0.1:5000/ccass/shareholding_threshold");
+    const url = new URL(`${process.env.NODE_ENV}/ccass/shareholding_threshold`);
     url.search = new URLSearchParams(params).toString();
     setTransaction([]);
     setOpen("");

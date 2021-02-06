@@ -17,7 +17,7 @@ export default function ShareholdingGraph(props) {
   };
   useEffect(() => {
     console.log(params);
-    const url = new URL("http://127.0.0.1:5000/ccass/top_ten_shareholding");
+    const url = new URL(`${process.env.NODE_ENV}/ccass/top_ten_shareholding`);
     const parse_data = {};
     const id_name_mapping = {};
     url.search = new URLSearchParams(params).toString();
