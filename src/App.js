@@ -38,6 +38,7 @@ function App() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
+    methods.reset();
     setValue(newValue);
   };
   const onSubmit = (data) => {

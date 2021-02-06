@@ -74,7 +74,7 @@ export default function CCASSForm(props) {
             render={(props) => (
               <TextField
                 {...props}
-                label="threshold"
+                label="threshold in %"
                 type="number"
                 variant="filled"
                 InputLabelProps={{
