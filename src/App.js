@@ -42,7 +42,6 @@ function App() {
     setValue(newValue);
   };
   const onSubmit = (data) => {
-    console.log(data);
     setParam(data);
   };
   return (

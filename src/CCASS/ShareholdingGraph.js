@@ -16,8 +16,9 @@ export default function ShareholdingGraph(props) {
     end_date,
   };
   useEffect(() => {
-    console.log(params);
-    const url = new URL(`${process.env.NODE_ENV}/ccass/top_ten_shareholding`);
+    const url = new URL(
+      `${process.env.REACT_APP_BACKEND_URL}/ccass/top_ten_shareholding`
+    );
     const parse_data = {};
     const id_name_mapping = {};
     url.search = new URLSearchParams(params).toString();
@@ -33,7 +34,6 @@ export default function ShareholdingGraph(props) {
         return response.json();
       })
       .then((responses) => {
-        console.log(responses);
         const parseTableData = [];
         Object.keys(responses).forEach(function (date) {
           responses[date].forEach((data, index) => {
@@ -60,12 +60,10 @@ export default function ShareholdingGraph(props) {
               return b["x"] - a["x"];
             });
           });
-          console.log(parse_data);
         });
         const dataPoints = [];
         if (parse_data) {
           Object.keys(parse_data).map((participant) => {
-            console.log(participant);
             dataPoints.push({
               type: "line",
               name: id_name_mapping[participant],
@@ -73,7 +71,6 @@ export default function ShareholdingGraph(props) {
               dataPoints: parse_data[participant],
             });
           });
-          console.log(dataPoints);
           setShareholding(dataPoints);
         }
       })
